@@ -181,6 +181,8 @@ const updatedBook = {
 };
 updatedBook;
 
+// Example of Template Literal
+// kinda like fstrings in python, used so you can use (tilda)`${expression}`
 const summary = `${title}, a ${pages}-page long book, was written by ${author}, and published in ${
   publicationDate.split("-")[0]
 }`;
