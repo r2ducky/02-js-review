@@ -185,5 +185,12 @@ updatedBook;
 // kinda like fstrings in python, used so you can use (tilda)`${expression}`
 const summary = `${title}, a ${pages}-page long book, was written by ${author}, and published in ${
   publicationDate.split("-")[0]
-}`;
+}. The book has ${hasMovieAdaptation ? "" : "not"}been adapted as a movie.`;
 summary;
+
+// Ternary Operator
+// if pages(num) greater 1000 = true print over a thousand, if false print less
+// than a thousand
+const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
+pagesRange;
+console.log(`The book has ${pagesRange} pages.`);
