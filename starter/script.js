@@ -166,7 +166,8 @@ const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 
 console.log(primaryGenre, secondaryGenre, otherGenres);
 
-//'...generes' is considered spread operator - can be first or last - last would look like ["epic fantasy", ...genres] and epic fantasy would be first in array
+// '...generes' is considered spread operator - can be first or last - last would look like
+// ["epic fantasy", ...genres] and epic fantasy would be first in array
 const newGenres = [...genres, "epic fantasy"];
 newGenres;
 
