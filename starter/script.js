@@ -147,7 +147,7 @@ function getBook(id) {
 // The whole point of this destructuring example is to practice as if I were trying to
 // extract specific data from an API, you can do that like this below, or via array destru..
 // ..cturing
-const book = getBook(2);
+const book = getBook(1);
 
 //const title = book.title;
 //const author = book.author;
@@ -161,6 +161,19 @@ console.log(title, author, genres);
 //const secondaryGenre = genres[1];
 
 //This is array destructuring
-const [primaryGenre, secondaryGenre] = genres;
+// '...otherGenres' is considered rest operator - has to be the last in the array
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 
-console.log(primaryGenre, secondaryGenre);
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+//'...generes' is considered spread operator - can be first or last - last would look like ["epic fantasy", ...genres] and epic fantasy would be first in array
+const newGenres = [...genres, "epic fantasy"];
+newGenres;
+
+const updatedBook = {
+  ...book,
+  publicationDate,
+  // Overwriting an exisiting property
+  pages: 1210,
+};
+updatedBook;
