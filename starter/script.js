@@ -162,6 +162,7 @@ console.log(title, author, genres);
 
 //This is array destructuring
 // '...otherGenres' is considered rest operator - has to be the last in the array
+// also we created the name otherGenres so give rest operator your own variable name
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 
 console.log(primaryGenre, secondaryGenre, otherGenres);
@@ -179,3 +180,8 @@ const updatedBook = {
   pages: 1210,
 };
 updatedBook;
+
+const summary = `${title}, a ${pages}-page long book, was written by ${author}, and published in ${
+  publicationDate.split("-")[0]
+}`;
+summary;
