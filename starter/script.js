@@ -173,7 +173,8 @@ newGenres;
 
 const updatedBook = {
   ...book,
-  publicationDate,
+  // Adding a new Property
+  moviePublicationDate: "2001-12-19",
   // Overwriting an exisiting property
   pages: 1210,
 };
