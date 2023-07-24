@@ -292,3 +292,19 @@ const allBookPages = books.reduce(
   0
 );
 allBookPages;
+
+// Array sort method
+// this method mutates array meaning it alters original array
+// other 3 methods were functional methods
+// in order to make array functional array, you need to copy
+// old array buy using .slice() method
+
+// a - b is asc order
+// b - a is desc order
+const arr = [3, 7, 6, 1, 2];
+const sorted = arr.sort((a, b) => a - b);
+sorted;
+
+// with slice method
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
