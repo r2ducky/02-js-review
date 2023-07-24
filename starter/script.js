@@ -220,6 +220,7 @@ function getTotalReviewCount(book) {
 console.log(getTotalReviewCount(book));
 */
 
+/*
 // getTotalReview Count function from previous code
 function getTotalReviewCount(book) {
   const goodreads = book.reviews?.goodreads.reviewCount;
@@ -337,3 +338,20 @@ const booksAfterUpdate = booksAfterDelete.map((book) =>
   book.id === 1 ? { ...book, pages: 1210 } : book
 );
 booksAfterUpdate;
+*/
+
+// Asynchronous JS: Promises
+// fetch method allows you to use url to connect to API
+// for this example there is a dummy one we can use called
+// jsonplaceholder.typicode.com
+
+// We are interested in Promise state of "Fulfilled"
+
+// Here we fetch data from this url (http request)
+// we use .then(response) to wait for response from request
+// and convert that into json
+// once we do that then we use then.(data) to fit reponse
+// into javascript, which is then console.logged
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
