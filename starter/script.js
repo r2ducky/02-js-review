@@ -273,7 +273,7 @@ const longBooksWithMovie = books
 longBooksWithMovie;
 
 // Side Note:
-// adventureBooks = books..
+// adventureBooks = books. ...
 // this books, is coming from const books at the beginning
 // vs
 // .filter((x) => x) is coming from within filter
@@ -310,3 +310,29 @@ arr; // arr is mutated (original array)
 // with slice method (desc order, biggest to smallest)
 const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
 sortedByPages;
+
+// Working with Immutable Arrays
+// Add, Delete, Update elements of an Array
+// without changing the original one
+
+// Add a book object to array
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: "J.K. Rowling",
+};
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
+
+// Delete a book object from array
+// Return array of book objects that include everything except the book object
+// with id 3
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+booksAfterDelete;
+
+// Update a book in array
+// if book id is 1 then return empty object, else just return book
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 1210 } : book
+);
+booksAfterUpdate;
