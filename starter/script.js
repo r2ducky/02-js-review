@@ -352,6 +352,19 @@ booksAfterUpdate;
 // and convert that into json
 // once we do that then we use then.(data) to fit reponse
 // into javascript, which is then console.logged
-fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
+// Asynchronous JS: Async/Await
+async function getTodos() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await response.json();
+  console.log(data);
+
+  return data;
+}
+
+const todos = getTodos();
+console.log(todos);
+getTodos();
