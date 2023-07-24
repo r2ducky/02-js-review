@@ -295,8 +295,9 @@ allBookPages;
 
 // Array sort method
 // this method mutates array meaning it alters original array
-// other 3 methods were functional methods
-// in order to make array functional array, you need to copy
+// other 3 methods were functional methods meaning you make a
+// copy of array and work over the array.
+// In order to make sorted array a functional array, you need to copy
 // old array buy using .slice() method
 
 // a - b is asc order
@@ -304,7 +305,8 @@ allBookPages;
 const arr = [3, 7, 6, 1, 2];
 const sorted = arr.sort((a, b) => a - b);
 sorted;
+arr; // arr is mutated (original array)
 
-// with slice method
+// with slice method (desc order, biggest to smallest)
 const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
 sortedByPages;
