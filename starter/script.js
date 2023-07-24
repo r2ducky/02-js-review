@@ -143,6 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
+/*
 // Destructuring
 // The whole point of this destructuring example is to practice as if I were trying to
 // extract specific data from an API, you can do that like this below, or via array destru..
@@ -217,3 +218,47 @@ function getTotalReviewCount(book) {
 }
 
 console.log(getTotalReviewCount(book));
+*/
+
+// getTotalReview Count function from previous code
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads.reviewCount;
+  const librarything = book.reviews?.librarything?.reviewCount ?? 0;
+  librarything;
+  return goodreads + librarything;
+}
+
+// Array Map method
+// three types of arrays: map, filter, and reduce (functional array methods)
+const books = getBooks();
+
+// map method will loop over an array and return a new array w the same len
+// with some operation applied to each of the elements of the original array
+// simple example done with arrow function
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x);
+
+// script example
+const titles = books.map((book) => book.title);
+titles;
+
+// This example shows how to get data from books, but there are two ways
+// to write this
+// Way 1 (with return)
+/*
+const essentialData = books.map((book) => {
+  return {
+    title: book.title,
+    author: book.author,
+  };
+});
+*/
+
+// Way 2 (without return & with parenthesis)
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  // You can also do computational things in here
+  reviewsCount: getTotalReviewCount(book),
+}));
+essentialData;
