@@ -331,7 +331,8 @@ const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
 booksAfterDelete;
 
 // Update a book in array
-// if book id is 1 then return empty object, else just return book
+// if book id is 1 then return book object with pages element updated with 1210,
+// else just return book original object
 const booksAfterUpdate = booksAfterDelete.map((book) =>
   book.id === 1 ? { ...book, pages: 1210 } : book
 );
