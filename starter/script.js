@@ -282,3 +282,13 @@ const adventureBooks = books
   .filter((x) => x.genres.includes("adventure"))
   .map((y) => y.title);
 adventureBooks;
+
+// Array reduce method
+// common use case: to add numbers
+// the goal of reduce method is to boil down entire array to one element
+// that you are looking for
+const allBookPages = books.reduce(
+  (accumulator, book) => accumulator + book.pages,
+  0
+);
+allBookPages;
