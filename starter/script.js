@@ -197,3 +197,23 @@ summary;
 const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
 pagesRange;
 console.log(`The book has ${pagesRange} pages.`);
+
+// Short Circuting and &&(and), ||(or), and ?? operators
+// ?? operator that takes two values and returns
+// the right handed value if the left handed value is UNDEFINED or NULL,
+// else return the left handed value
+
+// Optional Chaining
+// for librarything in the chain when you get towards the end 'librarything?.'
+// the question mark indicates that if the left side of the ? returns UNDEFINED
+// or NULL, then just dont go any further therefore making the left side false
+//
+// So now that the left side of ?? is false, return the right side which = 0
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads.reviewCount;
+  const librarything = book.reviews?.librarything?.reviewCount ?? 0;
+  librarything;
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(book));
