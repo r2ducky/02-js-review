@@ -66,7 +66,7 @@ const data = [
     publicationDate: "1965-01-01",
     author: "Frank Herbert",
     genres: ["science fiction", "novel", "adventure"],
-    hasMovieAdaptation: true,
+    hasMovieAdaptation: false,
     pages: 658,
     translations: {
       spanish: "",
@@ -245,14 +245,15 @@ titles;
 // This example shows how to get data from books, but there are two ways
 // to write this
 // Way 1 (with return)
-/*
-const essentialData = books.map((book) => {
+
+const essentialDataTest = books.map((book) => {
   return {
     title: book.title,
     author: book.author,
   };
 });
-*/
+
+essentialDataTest;
 
 // Way 2 (without return & with parenthesis)
 const essentialData = books.map((book) => ({
@@ -262,3 +263,22 @@ const essentialData = books.map((book) => ({
   reviewsCount: getTotalReviewCount(book),
 }));
 essentialData;
+
+// Array filter method
+// need to return a result that is true or false
+// in filter, you can also chain multiple array methods
+const longBooksWithMovie = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooksWithMovie;
+
+// Side Note:
+// adventureBooks = books..
+// this books, is coming from const books at the beginning
+// vs
+// .filter((x) => x) is coming from within filter
+// .map((y) => y) is coming from within map
+const adventureBooks = books
+  .filter((x) => x.genres.includes("adventure"))
+  .map((y) => y.title);
+adventureBooks;
